@@ -1,0 +1,114 @@
+<html>
+    <head> Program using both HTML and javascript </head>
+    <body>
+        <h1> Object </h1>
+        <p id="demo"> </p>
+        <script>
+            const car = {
+                brand : "skoda" ,
+                model : "rapid",
+                colour : "red",
+                start : function(){
+                  return  this.brand + "  "+ "drrrrrr"
+                },
+                drive : function(){
+                    return this.model + "  "+ "vroooom"
+                }
+                
+
+            }
+
+              console.log (car.brand);
+              console.log(car.model);
+              console.log (car.start());
+              console.log(car.drive());
+              document.getElementById("demo").innerHTML = car.brand + "   " + car.model + "   " + car.colour;
+
+        </script>
+
+        <h1>  Events  </h1>
+        <p>The present date and  time is : </p>
+        
+<button onclick="this.innerHTML= Date()"> click for date </button>
+<p> colored button</p>
+
+<button onmouseover="this.style.backgroundColor='red'"> drag the mouse here for RED </button>
+
+<p id="dem"> </p>
+<p id ="deo">
+</p>
+ <script>
+document.getElementById("dem").innerHTML = " Skoda is a good car    ";
+
+let txt = "this cat is best of all the cat ";
+txt = txt.replaceAll("cat","car");
+console.log(txt);    // demo for replace() method 
+
+</script>
+
+<script src="one.js"> </script>
+
+<p id="1234" > </p>
+
+<script>
+    
+const city = ["banglore","chennai","mumbai","hyderabad"];
+console.log(city[0]);
+let cty= "<ul>";
+city.forEach(myFunction);
+/*for (let i=0;i< city.length;i++)
+{
+    cty+= "<li>" + city[i] + "</li>";
+} */
+function myFunction(value){
+    cty+= "<li>" + value + "</li>";
+}
+cty += "</ul>";
+document.getElementById("1234").innerHTML = cty ;
+
+
+</script> 
+
+<script src="two.js" > </script>
+<p> input validation (Errors concept) </p>
+<input id="de" type="text">
+<button type="button" onclick="errorFunction()">Test Input</button>
+<p id="123"> </p>
+<script>
+ function errorFunction(){
+    const message = document.getElementById("123");
+    message.innerHTML ="";
+    let j = document.getElementById("de").value;
+    try{
+        if (j=="") throw "empty";
+        if (isNaN(j)) throw "not a number";
+        j=Number(j);
+        if (j<5) throw "too low";
+        if(j>10) throw "too high";
+    }
+    catch(e){
+        message.innerHTML = "Input is "+e; 
+    }
+    finally{
+        document.getElementById("de").value="";
+    }
+}
+</script>
+
+<! JS Jason>
+<p id="911"></p>
+
+<!-- <script>
+let detail = '{"employees":[' +
+  '{"firstName": "jose" , "lastName":"christopher"},'+
+  '{"firstName":"conor" , "lastName":"magregor"},'+
+  '{"firstName":"sergio", "lastName":"ramos"}]}';
+
+  const recordss =JSON.parse(detail);
+  console.log({hello: recordss.employees[1].firstName+"  "+recordss.employees[1].lastName});
+
+  document.getElementById("911").innerHTML = recordss.employees[1].firstName+"  "+recordss.employees[1].lastName;
+</script> -->
+
+    </body>
+</html>
